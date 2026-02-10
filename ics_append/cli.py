@@ -128,6 +128,7 @@ def match(
 
 
 @app.command(name="run-all")
+@app.command(name="run_all", hidden=True)
 def run_all(ctx: typer.Context) -> None:
     """Execute full pipeline: organize -> merge -> match."""
     from ics_append.pipeline import run_pipeline
