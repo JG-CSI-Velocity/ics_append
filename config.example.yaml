@@ -1,0 +1,51 @@
+# ICS Append -- Example Configuration
+# Copy to config.yaml and customize for your environment.
+
+# Base directory containing client folders with REF/DM files
+base_dir: "/path/to/ICS"
+
+# ARS directory with monthly YYYY.MM folders containing ODD files (optional)
+# ars_dir: "/path/to/ARS"
+
+# Limit matching to specific month (optional, defaults to current month)
+# match_month: "2026.01"
+
+# Dry run mode -- preview actions without writing files
+dry_run: false
+
+# Overwrite existing merged files (false creates versioned filenames)
+overwrite: true
+
+# Write CSV copy alongside Excel merged files
+csv_copy: false
+
+# Warn if match rate falls below this threshold (0.0 to 1.0)
+match_rate_warn_threshold: 0.5
+
+# Minimum hash length for heuristic column detection
+hash_min_length: 6
+
+# Keywords for detecting REF files (case-insensitive substrings in filename)
+default_ref_keywords:
+  - "referral"
+  - "ref"
+  - "ics_detailed"
+
+# Keywords for detecting DM files (case-insensitive substrings in filename)
+default_dm_keywords:
+  - "direct mail"
+  - "directmail"
+  - "new accounts"
+
+# Per-client column overrides (optional)
+# When a client's files have a known column layout, specify it here
+# to skip heuristic detection.
+clients:
+  "1453":
+    ref_column: "G"
+    ref_header_row: 1
+    dm_column: "I"
+    dm_header_row: 10
+  # "1217":
+  #   ref_column: "H"
+  #   ref_header_row: 2

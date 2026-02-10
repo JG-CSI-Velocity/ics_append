@@ -1,0 +1,33 @@
+# Data files (may contain PII)
+data/
+*.csv
+*.xlsx
+*.xls
+
+# Output files
+output/
+*.pptx
+
+# Config with real client data
+config.yaml
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+.coverage
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+log/
+*.log
